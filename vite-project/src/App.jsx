@@ -55,7 +55,7 @@ function App() {
     return (
         <>
             <Phrase typed={phrase.slice(0, charIndex)} nextChar={phrase[charIndex]} leftToType={phrase.slice(charIndex + 1, phrase.length)} keys={pressedKeys} />
-            <Keyboard />
+            <Keyboard shift={pressedKeys.includes("Shift")}/>
         </>
     )
 }
