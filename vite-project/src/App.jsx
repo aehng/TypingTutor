@@ -56,9 +56,6 @@ function App() {
         <>
             <Phrase typed={phrase.slice(0, charIndex)} nextChar={phrase[charIndex]} leftToType={phrase.slice(charIndex + 1, phrase.length)} keys={pressedKeys} />
             <Keyboard />
-            <div className="card">
-                <button onClick={nextPhrase}>Next Phrase</button>
-            </div>
         </>
     )
 }

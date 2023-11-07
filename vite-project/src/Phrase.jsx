@@ -5,7 +5,6 @@ import './Phrase.css'
 
 export function Phrase(props) {
   const {
-    phrase,
     typed,
     nextChar,
     leftToType
