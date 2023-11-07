@@ -1,0 +1,16 @@
+.underline{
+  text-decoration: underline;
+}
+
+.phrase{
+  padding: 16px;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 5em;
+  text-align: center;
+  color: #0a307c80;
+}
+
+.typed {
+  color: #000;
+}
