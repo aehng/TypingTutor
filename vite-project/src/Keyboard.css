@@ -30,3 +30,11 @@
   box-shadow: 0 4px 0 2px #0006;
   transition: all .05s ease;
 }
+
+.space-bar {
+  width: 300px;
+}
+
+.shift {
+  width: 72px;
+}
