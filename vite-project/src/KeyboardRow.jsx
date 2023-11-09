@@ -4,7 +4,8 @@ export function KeyboardRow(props) {
   const {
     keyValues,
     upperKeys,
-    shift
+    pressedKeys,
+    nextChar
   } = props;
 
   const [row, setRow] = useState([]);
@@ -13,22 +14,35 @@ export function KeyboardRow(props) {
   useEffect(() => {
     //I made this if statement not use duplicate code
     let keys = keyValues
-    if (shift) {
+    if (pressedKeys.includes("Shift")) {
       keys = upperKeys
     }
     let old = []
     keys.forEach((k, index) => {
+      let classes = "keyboard-key"
+      if(k === nextChar){
+        classes += " highlighted"
+      }
+      if (pressedKeys.includes(k)) {
+        classes += " active"
+      }
       if (k === "Shift") {
-        old = [...old, <div key={index} className="keyboard-key shift">{k}</div>]
-      } else {
-        old = [...old, <div key={index} className="keyboard-key">
+        if (nextChar && nextChar !== nextChar.toLowerCase()){
+          classes += " highlighted"
+        }
+        old = [...old, <div key={index} className={classes + " shift"} >{k}</div>]
+      } else if (k === ' '){
+        old = [...old, <div key={index} className={classes + " space-bar"} >{k}</div>]
+      }
+      else {
+        old = [...old, <div key={index} className={classes}>
           {k}
         </div>]
       }
     })
     setRow(old)
 
-  }, [shift]);
+  }, [pressedKeys, nextChar]);
 
 
   return (

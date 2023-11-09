@@ -7,3 +7,4 @@ When the prompt is finished the next prompt shows up
 When incorect keys are pressed the underline does not move on
 Letters are Case Sensitive
 The current underlined character is highlighted on the keyboard
+If the next letter needs to be capitalized the Shift key is highlighted before the next letter is highlighted
